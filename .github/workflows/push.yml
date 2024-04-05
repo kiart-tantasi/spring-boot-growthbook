@@ -13,14 +13,11 @@ jobs:
         with:
           distribution: "corretto"
           java-version: "17"
-      - name: Checkstyle
+      - name: Run Checkstyle and SpotBugs
         run: ./gradlew check
         working-directory: api
       - name: Test
         run: ./gradlew test
-        working-directory: api
-      - name: Run SpotBugs
-        run: ./gradlew spotbugsMain && ./gradlew spotbugsTest
         working-directory: api
       - name: Build
         run: ./gradlew clean assemble

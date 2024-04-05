@@ -19,6 +19,9 @@ jobs:
       - name: Test
         run: ./gradlew test
         working-directory: api
+      - name: Run SpotBugs
+        run: ./gradlew spotbugsMain && ./gradlew spotbugsTest
+        working-directory: api
       - name: Build
-        run: ./gradlew assemble
+        run: ./gradlew clean assemble
         working-directory: api

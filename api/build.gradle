@@ -21,10 +21,14 @@ configurations {
 
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.github.growthbook:growthbook-sdk-java:0.3.0'
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation 'org.json:json:20231013'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'

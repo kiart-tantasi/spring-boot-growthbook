@@ -23,13 +23,15 @@ services:
   # ==== [END OF GB] ==== #
   mysql:
       image: "mysql:8.0"
-      ports:
-        - "3036:3036"
+#      ports:
+#        - "3036:3036"
       environment:
         - MYSQL_ROOT_PASSWORD=password
       volumes:
         - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+        - mysqldata:/var/lib/mysql
 
 volumes:
   uploads:
   mongodata:
+  mysqldata:

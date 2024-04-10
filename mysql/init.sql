@@ -7,23 +7,24 @@ CREATE TABLE experiment.assignment(
     experiment_id VARCHAR(100) NOT NULL,
     variation_id VARCHAR(100) NOT NULL
 );
-INSERT INTO experiment.assignment(user_id, timestamp, experiment_id, variation_id)
-VALUES
-("1", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "a"),
-("2", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "a"),
-("3", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "a"),
-("4", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "a"),
-("5", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "a"),
-("6", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "a"),
-("7", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "a"),
 
-("8", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "b"),
-("9", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "b"),
-("10", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "b"),
-("11", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "b"),
-("12", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "b"),
-("13", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "b"),
-("14", TIMESTAMP('2024-04-01 00:00:00'), "exp-1", "b");
+--INSERT INTO experiment.assignment(user_id, timestamp, experiment_id, variation_id)
+--VALUES
+--("1", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "a"),
+--("2", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "a"),
+--("3", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "a"),
+--("4", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "a"),
+--("5", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "a"),
+--("6", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "a"),
+--("7", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "a"),
+--
+--("8", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "b"),
+--("9", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "b"),
+--("10", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "b"),
+--("11", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "b"),
+--("12", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "b"),
+--("13", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "b"),
+--("14", TIMESTAMP('2024-04-01 00:00:00'), "first-exp", "b");
 
 -- goal metrics
 CREATE TABLE experiment.purchase(

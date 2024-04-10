@@ -11,12 +11,21 @@ import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.sql.Timestamp;
+import java.util.Objects;
+import net.petchblog.growthbook.entities.Assignment;
 import net.petchblog.growthbook.enums.ExperimentId;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GBService {
+
+  private final AssignmentService assignmentService;
+
+  public GBService(AssignmentService assignmentService) {
+    this.assignmentService = assignmentService;
+  }
 
   public boolean isOn(String id, ExperimentId exp)
       throws URISyntaxException, IOException, InterruptedException {
@@ -36,7 +45,7 @@ public class GBService {
     return new JSONObject(response.body()).get("features").toString();
   }
 
-  private TrackingCallback getTrackingCallback() {
+  private TrackingCallback getTrackingCallback(String id) {
     return new TrackingCallback() {
       public <T> void onTrack(
           Experiment<T> experiment,
@@ -48,6 +57,12 @@ public class GBService {
         System.out.println("experimentResult.getValue(): " + experimentResult.getValue());
         System.out.println(
             "experimentResult.getVariationId(): " + experimentResult.getVariationId());
+        final Assignment assignment = new Assignment(
+            id,
+            new Timestamp(System.currentTimeMillis()),
+            experimentResult.getFeatureId(),
+            Objects.requireNonNull(experimentResult.getVariationId()).toString());
+        assignmentService.insertAssignment(assignment);
       }
     };
   }
@@ -60,7 +75,7 @@ public class GBService {
     final GBContext context = GBContext.builder()
         .featuresJson(getFeatures())
         .attributesJson(userAttributesObj.toString())
-        .trackingCallback(getTrackingCallback())
+        .trackingCallback(getTrackingCallback(id))
         .build();
     return new GrowthBook(context);
   }

@@ -14,6 +14,9 @@ public class Assignment {
   private String experiment_id;
   private String variation_id;
 
+  public Assignment() {
+  }
+
   public Assignment(String user_id, Timestamp timestamp, String experimentId, String variationId) {
     this.user_id = user_id;
     this.timestamp = timestamp;

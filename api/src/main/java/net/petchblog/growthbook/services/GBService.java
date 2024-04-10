@@ -35,7 +35,8 @@ public class GBService {
   // TODO: use GBFeaturesRepository to reduce features requests
   private String getFeatures() throws URISyntaxException, IOException, InterruptedException {
     System.out.println("...GETTING FEATURES");
-    final URI featuresEndpoint = new URI("http://localhost:3100/api/features/sdk-ABp5pRyM3XthoC9k");
+    // TODO: use @Value
+    final URI featuresEndpoint = new URI("http://localhost:3100/api/features/sdk-Anwkl0wwHVAw2ZvW");
     final HttpRequest request = HttpRequest.newBuilder().uri(featuresEndpoint).GET().build();
     final HttpResponse<String> response = HttpClient.newBuilder().build()
         .send(request, HttpResponse.BodyHandlers.ofString());

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/health")
-public class Health {
+public class HealthController {
   @GetMapping
   public ResponseEntity<?> health() throws InterruptedException {
     Thread.sleep(200); // fake response time

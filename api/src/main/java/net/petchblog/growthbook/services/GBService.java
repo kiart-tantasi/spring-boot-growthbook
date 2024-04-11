@@ -13,6 +13,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.sql.Timestamp;
 import java.util.Objects;
+import net.petchblog.growthbook.configurations.GBConfig;
 import net.petchblog.growthbook.entities.Assignment;
 import net.petchblog.growthbook.enums.ExperimentId;
 import org.json.JSONObject;
@@ -21,9 +22,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class GBService {
 
+  private final GBConfig gbConfig;
   private final AssignmentService assignmentService;
 
-  public GBService(AssignmentService assignmentService) {
+  public GBService(GBConfig gbConfig, AssignmentService assignmentService) {
+    this.gbConfig = gbConfig;
     this.assignmentService = assignmentService;
   }
 
@@ -35,8 +38,7 @@ public class GBService {
   // TODO: use GBFeaturesRepository to reduce features requests
   private String getFeatures() throws URISyntaxException, IOException, InterruptedException {
     System.out.println("...GETTING FEATURES");
-    // TODO: use @Value
-    final URI featuresEndpoint = new URI("http://localhost:3100/api/features/sdk-Anwkl0wwHVAw2ZvW");
+    final URI featuresEndpoint = new URI(gbConfig.getEndpoint());
     final HttpRequest request = HttpRequest.newBuilder().uri(featuresEndpoint).GET().build();
     final HttpResponse<String> response = HttpClient.newBuilder().build()
         .send(request, HttpResponse.BodyHandlers.ofString());

@@ -10,7 +10,14 @@ Please follow https://www.mongodb.com/try/download/database-tools
 mongorestore --host=localhost --port=27017 -u root -p password --authenticationDatabase=admin --db growthbook ./mongodump/dump/growthbook
 ```
 
-# mongodump
+# e-mail and password
+
+```
+test@test.com
+testtest
+```
+
+# mongodump (for backing-up)
 
 ```
 cd mongodump

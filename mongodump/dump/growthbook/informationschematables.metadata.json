@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"id":{"$numberInt":"1"},"organization":{"$numberInt":"1"}},"name":"id_1_organization_1","background":true,"unique":true}],"uuid":"a22d4fcf98914b279c5cb52d4b74ed12","collectionName":"informationschematables","type":"collection"}

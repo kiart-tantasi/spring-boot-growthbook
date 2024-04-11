@@ -5,7 +5,7 @@
     docker compose up
     ```
 
-- Then visit GrowthBOok at http://localhost:3000 and Create Java SDK to get endpoint
+- Visit GrowthBook at http://localhost:3000 and Create Java SDK to get endpoint
 
 - Once got endpoint, Put it in `application*.properties` as `growthbook.endpoint=<your-endpoint>`
 

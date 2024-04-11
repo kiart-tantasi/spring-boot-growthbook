@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"id":{"$numberInt":"1"},"organization":{"$numberInt":"1"}},"name":"id_1_organization_1","unique":true}],"uuid":"14575a557f6d43e6b7fbe3ad8887bdaa","collectionName":"factmetrics","type":"collection"}

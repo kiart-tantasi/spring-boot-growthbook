@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"organization":{"$numberInt":"1"},"hour":{"$numberInt":"1"}},"name":"organization_1_hour_1","background":true,"unique":true}],"uuid":"6783790735c64c8798dcd0a82e40d355","collectionName":"realtimeusages","type":"collection"}

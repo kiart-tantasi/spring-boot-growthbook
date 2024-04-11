@@ -4,8 +4,9 @@ services:
   # ref: https://docs.growthbook.io/self-host
   mongo:
     image: "mongo:latest"
-    # ports:
-      # - "27017:27017"
+    # exposing port for cli tools
+    ports:
+      - "27017:27017"
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=password
@@ -24,14 +25,15 @@ services:
       - uploads:/usr/local/src/app/packages/back-end/uploads
   # ==== [END OF GB] ==== #
   mysql:
-      image: "mysql:8.0"
-      ports:
-        - "3306:3306"
-      environment:
-        - MYSQL_ROOT_PASSWORD=password
-      volumes:
-        - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
-        - mysqldata:/var/lib/mysql
+    image: "mysql:8.0"
+    # exposing port for cli tools
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysqldata:/var/lib/mysql
 
 volumes:
   uploads:

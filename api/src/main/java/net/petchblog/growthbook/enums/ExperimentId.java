@@ -9,7 +9,7 @@ public enum ExperimentId {
   // to attach custom values
   private final String value;
 
-  private ExperimentId(String value) {
+  ExperimentId(String value) {
     this.value = value;
   }
 }

@@ -1,7 +1,5 @@
 In case you are lazy to config GrowthBook on your own, you can use `mongorestore` to restore prepared data from this `mongodump` directory
 
-- First, you need to mount port 27017:27017 in `docker-compose.yaml`
-
 # Restore
 
 ```

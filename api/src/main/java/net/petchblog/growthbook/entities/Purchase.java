@@ -1,5 +1,6 @@
 package net.petchblog.growthbook.entities;
 
+
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,29 +10,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.sql.Timestamp;
 
-@Entity
 @Table
-public class Assignment {
+@Entity
+public class Purchase {
   @Id
-  // IDENTITY vs SEQUENCE - https://stackoverflow.com/q/10062328/21331113
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   @Column(name = "user_id")
   private String userId;
   @SuppressFBWarnings("URF_UNREAD_FIELD")
   private Timestamp timestamp;
-  @Column(name = "experiment_id")
-  private String experimentId;
-  @Column(name = "variation_id")
-  private String variationId;
 
-  public Assignment() {
+  public Purchase() {
   }
 
-  public Assignment(String userId, Timestamp timestamp, String experimentId, String variationId) {
+  public Purchase(String userId, Timestamp timestamp) {
     this.userId = userId;
     this.timestamp = timestamp;
-    this.experimentId = experimentId;
-    this.variationId = variationId;
   }
 }

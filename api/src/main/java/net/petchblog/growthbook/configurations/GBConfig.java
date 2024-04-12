@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@Getter
 public class GBConfig {
-  @Getter
   @Value("${growthbook.endpoint}")
   private String endpoint;
 }

@@ -12,11 +12,11 @@
         ```
         mongorestore --host=localhost --port=27017 -u root -p password --authenticationDatabase=admin --db growthbook ./mongodump/dump/growthbook
         ```
-      - e-mail and password
-          ```
-          test@email.com
-          testtest
-          ```
+        - e-mail and password
+            ```
+            test@email.com
+            testtest
+            ```
 
 - Create an experiment with key `first-exp` and Link it with a feature flag as described in instructions
 
@@ -27,5 +27,9 @@
       ```
     - Insert a purchase row
       ```
-      curl -I -X POST http://localhost:8080/api/exp/first-exp/purchase/id/{id}
+      curl -I -X POST http://localhost:8080/api/exp/events/purchase/id/{id}
       ```
+
+# TODO
+
+- Handle timestamp in java (convert local to utc)

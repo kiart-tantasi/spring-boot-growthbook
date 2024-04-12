@@ -1,4 +1,3 @@
-
 # mongorestore
 
 ```
@@ -11,4 +10,3 @@ mongorestore --host=<host> --port=<port> -u <username> -p <password> --authentic
 cd mongodump
 mongodump --host=<host> --port=<port> -u <username> -p <password> --authenticationDatabase=admin --db <database>
 ```
-

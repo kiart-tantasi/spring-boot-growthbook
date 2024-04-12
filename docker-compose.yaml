@@ -4,7 +4,7 @@ services:
   # ref: https://docs.growthbook.io/self-host
   mongo:
     image: "mongo:latest"
-    # exposing port for cli tools
+    # exposing port for cli-tools
     ports:
       - "27017:27017"
     environment:
@@ -26,7 +26,7 @@ services:
   # ==== [END OF GB] ==== #
   mysql:
     image: "mysql:8.0"
-    # exposing port for cli tools
+    # exposing port for cli-tools
     ports:
       - "3306:3306"
     environment:

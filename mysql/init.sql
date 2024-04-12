@@ -1,6 +1,6 @@
 CREATE DATABASE experiment;
 
--- assignment (Assignment.java)
+-- Assignment.java
 CREATE TABLE experiment.assignment(
    id BIGINT NOT NULL AUTO_INCREMENT,
    user_id VARCHAR(255) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE experiment.assignment(
    PRIMARY KEY (id)
 );
 
--- goal metrics (Purchase.java)
+-- Purchase.java
 CREATE TABLE experiment.purchase(
    id BIGINT NOT NULL AUTO_INCREMENT,
    user_id VARCHAR(255) NOT NULL,

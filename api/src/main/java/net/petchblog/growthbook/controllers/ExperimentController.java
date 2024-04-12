@@ -34,7 +34,7 @@ public class ExperimentController {
     return ResponseEntity.ok().body(isOn);
   }
 
-  @PostMapping("first-exp/purchase/id/{id}")
+  @PostMapping("events/purchase/id/{id}")
   public ResponseEntity<?> postPurchase(@PathVariable String id) {
     this.purchaseService.insertPurchase(
         new Purchase(id, new Timestamp(System.currentTimeMillis())));

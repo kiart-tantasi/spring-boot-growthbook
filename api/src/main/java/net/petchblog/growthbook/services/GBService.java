@@ -15,7 +15,6 @@ import java.sql.Timestamp;
 import java.util.Objects;
 import net.petchblog.growthbook.configurations.GBConfig;
 import net.petchblog.growthbook.entities.Assignment;
-import net.petchblog.growthbook.enums.ExperimentId;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
@@ -30,9 +29,9 @@ public class GBService {
     this.assignmentService = assignmentService;
   }
 
-  public boolean isOn(String id, ExperimentId exp)
+  public boolean isOn(String id, String expKey)
       throws URISyntaxException, IOException, InterruptedException {
-    return getGB(id).isOn(exp.getValue());
+    return getGB(id).isOn(expKey);
   }
 
   // TODO: use GBFeaturesRepository to reduce features requests

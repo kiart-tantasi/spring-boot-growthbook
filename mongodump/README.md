@@ -1,13 +1,15 @@
-In case you are lazy to config GrowthBook on your own, you can use `mongorestore` to restore prepared data from this `mongodump` directory
-
-# Fist, Install MongoDB Command Line Database Tools Download
-
-Please follow https://www.mongodb.com/try/download/database-tools
 
 # mongorestore
 
 ```
-mongorestore --host=localhost --port=27017 -u root -p password --authenticationDatabase=admin --db growthbook ./mongodump/dump/growthbook
+mongorestore --host=<host> --port=<port> -u <username> -p <password> --authenticationDatabase=admin --db <database> <folder>
+```
+
+# mongodump
+
+```
+cd mongodump
+mongodump --host=<host> --port=<port> -u <username> -p <password> --authenticationDatabase=admin --db <database>
 ```
 
 # e-mail and password
@@ -15,11 +17,4 @@ mongorestore --host=localhost --port=27017 -u root -p password --authenticationD
 ```
 test@test.com
 testtest
-```
-
-# mongodump (for backing-up)
-
-```
-cd mongodump
-mongodump --host=localhost --port=27017 -u root -p password --authenticationDatabase=admin --db growthbook
 ```

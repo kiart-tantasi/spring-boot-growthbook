@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 @Table
 public class Assignment {
   @Id
+  // IDENTITY vs SEQUENCE - https://stackoverflow.com/q/10062328/21331113
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String user_id;

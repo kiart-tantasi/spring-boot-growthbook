@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.Timestamp;
 import net.petchblog.growthbook.entities.Purchase;
-import net.petchblog.growthbook.enums.ExperimentId;
 import net.petchblog.growthbook.services.GBService;
 import net.petchblog.growthbook.services.PurchaseService;
 import org.springframework.http.ResponseEntity;
@@ -26,14 +25,12 @@ public class ExperimentController {
     this.purchaseService = purchaseService;
   }
 
-  // curl -I http://localhost:8080/api/exp/first-exp/id/3
-  @GetMapping("first-exp/id/{id}")
-  public ResponseEntity<?> getFirstExp(@PathVariable String id)
+  @GetMapping("{expKey}/id/{id}")
+  public ResponseEntity<?> getFirstExp(@PathVariable String expKey, @PathVariable String id)
       throws URISyntaxException, IOException, InterruptedException {
     System.out.println("==================================================");
-    final boolean isOn = gbService.isOn(id, ExperimentId.FIRST_EXP);
+    final boolean isOn = gbService.isOn(id, expKey);
     System.out.println("isOn: " + isOn);
-    System.out.println("==================================================");
     return ResponseEntity.ok().body(isOn);
   }
 

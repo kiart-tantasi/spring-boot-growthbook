@@ -1,5 +1,6 @@
 package net.petchblog.growthbook.entities;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,6 +18,7 @@ public class Assignment {
   private Long id;
   @Column(name = "user_id")
   private String userId;
+  @SuppressFBWarnings("URF_UNREAD_FIELD")
   private Timestamp timestamp;
   @Column(name = "experiment_id")
   private String experimentId;

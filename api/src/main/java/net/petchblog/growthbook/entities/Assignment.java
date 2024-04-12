@@ -1,5 +1,6 @@
 package net.petchblog.growthbook.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,18 +15,21 @@ public class Assignment {
   // IDENTITY vs SEQUENCE - https://stackoverflow.com/q/10062328/21331113
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String user_id;
+  @Column(name = "user_id")
+  private String userId;
   private Timestamp timestamp;
-  private String experiment_id;
-  private String variation_id;
+  @Column(name = "experiment_id")
+  private String experimentId;
+  @Column(name = "variation_id")
+  private String variationId;
 
   public Assignment() {
   }
 
-  public Assignment(String user_id, Timestamp timestamp, String experimentId, String variationId) {
-    this.user_id = user_id;
+  public Assignment(String userId, Timestamp timestamp, String experimentId, String variationId) {
+    this.userId = userId;
     this.timestamp = timestamp;
-    this.experiment_id = experimentId;
-    this.variation_id = variationId;
+    this.experimentId = experimentId;
+    this.variationId = variationId;
   }
 }

@@ -1,6 +1,7 @@
 package net.petchblog.growthbook.entities;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,14 +15,15 @@ public class Purchase {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String user_id;
+  @Column(name = "user_id")
+  private String userId;
   private Timestamp timestamp;
 
   public Purchase() {
   }
 
   public Purchase(String userId, Timestamp timestamp) {
-    this.user_id = userId;
+    this.userId = userId;
     this.timestamp = timestamp;
   }
 }

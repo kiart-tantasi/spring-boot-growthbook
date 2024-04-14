@@ -3,7 +3,7 @@ package net.petchblog.growthbook.controllers;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.sql.Timestamp;
+import java.time.Instant;
 import net.petchblog.growthbook.entities.Purchase;
 import net.petchblog.growthbook.services.GBService;
 import net.petchblog.growthbook.services.PurchaseService;
@@ -39,7 +39,7 @@ public class ExperimentController {
   @PostMapping("events/purchase/id/{id}")
   public ResponseEntity<?> postPurchase(@PathVariable String id) {
     this.purchaseService.insertPurchase(
-        new Purchase(id, new Timestamp(System.currentTimeMillis())));
+        new Purchase(id, Instant.now()));
     return ResponseEntity.ok().build();
   }
 }

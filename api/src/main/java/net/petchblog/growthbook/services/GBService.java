@@ -12,7 +12,7 @@ import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Objects;
 import net.petchblog.growthbook.configurations.GBConfig;
 import net.petchblog.growthbook.entities.Assignment;
@@ -63,7 +63,7 @@ public class GBService {
             "experimentResult.getVariationId(): " + experimentResult.getVariationId());
         final Assignment assignment = new Assignment(
             id,
-            new Timestamp(System.currentTimeMillis()),
+            Instant.now(),
             experimentResult.getFeatureId(),
             Objects.requireNonNull(experimentResult.getVariationId()).toString());
         assignmentService.insertAssignment(assignment);

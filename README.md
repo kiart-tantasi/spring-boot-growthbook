@@ -32,6 +32,4 @@
 
 # TODO
 
-- Handle timestamp in java (convert local to utc)
-
-- Find a typical way to clone a java nested-object or to serialize-deserialize
+- Find java type that suits MySQL's DATETIME and TIMESTAMP type (Instant, LocalDateTime, ZonedDateTime, ...)

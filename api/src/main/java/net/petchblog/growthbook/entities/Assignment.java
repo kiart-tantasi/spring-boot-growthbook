@@ -7,7 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.sql.Timestamp;
+import java.time.Instant;
 
 @Entity
 @Table
@@ -19,7 +19,7 @@ public class Assignment {
   @Column(name = "user_id")
   private String userId;
   @SuppressFBWarnings("URF_UNREAD_FIELD")
-  private Timestamp timestamp;
+  private Instant timestamp;
   @Column(name = "experiment_id")
   private String experimentId;
   @Column(name = "variation_id")
@@ -28,9 +28,9 @@ public class Assignment {
   public Assignment() {
   }
 
-  public Assignment(String userId, Timestamp timestamp, String experimentId, String variationId) {
+  public Assignment(String userId, Instant timestamp, String experimentId, String variationId) {
     this.userId = userId;
-    this.timestamp = new Timestamp(timestamp.getTime());
+    this.timestamp = Instant.from(timestamp);
     this.experimentId = experimentId;
     this.variationId = variationId;
   }

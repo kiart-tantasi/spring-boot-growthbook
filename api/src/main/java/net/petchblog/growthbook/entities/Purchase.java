@@ -8,7 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.sql.Timestamp;
+import java.time.Instant;
 
 @Table
 @Entity
@@ -19,13 +19,13 @@ public class Purchase {
   @Column(name = "user_id")
   private String userId;
   @SuppressFBWarnings("URF_UNREAD_FIELD")
-  private Timestamp timestamp;
+  private Instant timestamp;
 
   public Purchase() {
   }
 
-  public Purchase(String userId, Timestamp timestamp) {
+  public Purchase(String userId, Instant timestamp) {
     this.userId = userId;
-    this.timestamp = new Timestamp(timestamp.getTime());
+    this.timestamp = Instant.from(timestamp);
   }
 }

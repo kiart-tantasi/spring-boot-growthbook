@@ -26,6 +26,6 @@ public class Purchase {
 
   public Purchase(String userId, Timestamp timestamp) {
     this.userId = userId;
-    this.timestamp = timestamp;
+    this.timestamp = new Timestamp(timestamp.getTime());
   }
 }

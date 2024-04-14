@@ -33,3 +33,5 @@
 # TODO
 
 - Handle timestamp in java (convert local to utc)
+
+- Find a typical way to clone a java nested-object or to serialize-deserialize

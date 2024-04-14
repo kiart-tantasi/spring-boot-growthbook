@@ -25,7 +25,6 @@ public class GBService {
   private final GBConfig gbConfig;
   private final AssignmentService assignmentService;
 
-
   @SuppressFBWarnings("EI2")
   public GBService(GBConfig gbConfig, AssignmentService assignmentService) {
     this.gbConfig = gbConfig;

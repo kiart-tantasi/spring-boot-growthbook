@@ -1,5 +1,6 @@
 package net.petchblog.growthbook.services;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import growthbook.sdk.java.Experiment;
 import growthbook.sdk.java.ExperimentResult;
 import growthbook.sdk.java.GBContext;
@@ -24,6 +25,8 @@ public class GBService {
   private final GBConfig gbConfig;
   private final AssignmentService assignmentService;
 
+
+  @SuppressFBWarnings("EI2")
   public GBService(GBConfig gbConfig, AssignmentService assignmentService) {
     this.gbConfig = gbConfig;
     this.assignmentService = assignmentService;

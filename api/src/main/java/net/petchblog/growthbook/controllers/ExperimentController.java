@@ -1,5 +1,6 @@
 package net.petchblog.growthbook.controllers;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.Timestamp;
@@ -20,6 +21,7 @@ public class ExperimentController {
   private final GBService gbService;
   private final PurchaseService purchaseService;
 
+  @SuppressFBWarnings("EI2")
   public ExperimentController(GBService gbService, PurchaseService purchaseService) {
     this.gbService = gbService;
     this.purchaseService = purchaseService;

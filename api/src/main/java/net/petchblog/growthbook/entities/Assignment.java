@@ -30,7 +30,7 @@ public class Assignment {
 
   public Assignment(String userId, Timestamp timestamp, String experimentId, String variationId) {
     this.userId = userId;
-    this.timestamp = timestamp;
+    this.timestamp = new Timestamp(timestamp.getTime());
     this.experimentId = experimentId;
     this.variationId = variationId;
   }

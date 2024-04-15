@@ -49,6 +49,9 @@ public class GBService {
     return new JSONObject(response.body()).get("features").toString();
   }
 
+  /**
+   * This method only runs when user is included in experiment.
+   */
   private TrackingCallback getTrackingCallback(String id) {
     return new TrackingCallback() {
       public <T> void onTrack(

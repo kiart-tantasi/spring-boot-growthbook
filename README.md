@@ -1,3 +1,7 @@
+# About project
+
+Integrate Spring boot app with GrowthBook for A/B Testing
+
 # Set up project
 
 - Run
@@ -30,7 +34,3 @@
       ```
       curl -I -X POST http://localhost:8080/api/exp/events/purchase/id/{id}
       ```
-
-# Todo
-
-- Find java type that suits MySQL's DATETIME and TIMESTAMP type (Instant, LocalDateTime, ZonedDateTime, ...)

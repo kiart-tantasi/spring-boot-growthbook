@@ -67,7 +67,7 @@ public class GBService {
         final Assignment assignment = new Assignment(
             id,
             Instant.now(),
-            experimentResult.getFeatureId(),
+            experiment.getKey(), // needs to record experiment key because feature id is changeable
             Objects.requireNonNull(experimentResult.getVariationId()).toString());
         assignmentService.insertAssignment(assignment);
       }

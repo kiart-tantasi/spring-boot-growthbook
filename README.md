@@ -28,7 +28,8 @@ Integrate Spring boot app with GrowthBook for A/B Testing
 - Start app and you can try these endpoints
     - Allocate variant for a user which will also insert an assignment row
       ```
-      curl -I http://localhost:8080/api/exp/first-exp/id/{id}
+      curl -I http://localhost:8080/api/exp/{exp-key}/id/{id}
+      # example: curl -I http://localhost:8080/api/exp/first-exp/id/123
       ```
     - Insert a purchase row for goal metrics
       ```
